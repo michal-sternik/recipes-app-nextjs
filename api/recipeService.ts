@@ -1,6 +1,6 @@
 
-import { RecipeDetailsType, RecipeType } from "../types/recipeTypes.ts"
-import { recipeApi } from "./recipeApi.ts"
+import { RecipeDetailsType, RecipeType } from "../types/recipeTypes"
+import { recipeApi } from "./recipeApi"
 
 class RecipeService {
 
