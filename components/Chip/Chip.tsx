@@ -1,5 +1,5 @@
 
-import { nunito } from '@/utils';
+import { nunito } from '@/lib/utils';
 import { ColorsENUM } from '../../types/recipeTypes';
 
 

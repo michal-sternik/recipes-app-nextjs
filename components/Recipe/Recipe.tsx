@@ -2,7 +2,7 @@
 import { ColorsENUM, RecipeType } from '../../types/recipeTypes';
 import Chip from '../Chip/Chip';
 import TextWithImageOnLeft from '../TextWithImageOnLeft/TextWithImageOnLeft';
-import { getColorByDifficulty, justMe, nunito } from '../../utils';
+import { getColorByDifficulty, justMe, nunito } from '../../lib/utils';
 import { useState } from 'react';
 import { RecipeSkeleton } from '../RecipeSkeleton/RecipeSkeleton';
 import Link from 'next/link';

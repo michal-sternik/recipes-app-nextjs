@@ -7,7 +7,7 @@ type Props = {
 const TextWithImageOnLeft = ({ imageSrc, children }: Props) => {
     return (
         <div className='gap-2 w-10 flex flex-start flex-row items-center '>
-            <div className="relative h-10 w-10 flex-shrink-0">
+            <div className="relative h-10 w-10 flex-shrink-0 ">
                 <Image
                     src={imageSrc}
                     alt={'recipe icon'}
