@@ -13,7 +13,6 @@ const Recipe = ({ id, name, image, cuisine, tags, cookTimeMinutes, difficulty }:
     const [imageLoaded, setImageLoaded] = useState(false);
 
     {/* if image is not loaded we have to display it to make it possible to load, so firstly we 'hide it using opacity 0 and position absolute to place them apart of current layout, and then just opacity 100 */ }
-    // console.log(id, imageLoaded)
     return (
         <>
             {!imageLoaded && (<RecipeSkeleton mdWidth='w-3/10' />)}
@@ -29,7 +28,6 @@ const Recipe = ({ id, name, image, cuisine, tags, cookTimeMinutes, difficulty }:
                             fill
                             className='w-full h-full object-cover'
                             onLoad={() => {
-                                console.log(`image ${id} loaded`)
                                 setImageLoaded(true)
                             }}
                             //default is "lazy" - When lazy, defer loading the image until it reaches a calculated distance from the viewport.

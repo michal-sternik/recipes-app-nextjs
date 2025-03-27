@@ -73,7 +73,7 @@ const Home = ({ initialRecipes }: Props) => {
         ? filteredRecepies
         : activeFilter !== 'All' ?
             transformByDifficulty[activeFilter].slice(0, offset + ITEM_PER_LOAD)
-            : (console.log("Allrecipes", allRecipes), allRecipes && allRecipes.slice(0, offset + ITEM_PER_LOAD))
+            : allRecipes && allRecipes.slice(0, offset + ITEM_PER_LOAD)
 
     const handleDifficultyFilter = (difficulty: string) => {
         if (searchPhrase !== "") {
@@ -107,7 +107,7 @@ const Home = ({ initialRecipes }: Props) => {
             toast.error("Error with search engine occured: \n" + searchedDataError)
         }
     }, [searchedDataError])
-    console.log(displayedRecepies)
+
     return (
         <>
             <div className='flex flex-col md:flex-row justify-between py-10 px-5 xl:px-12 gap-10 flex-wrap'>
