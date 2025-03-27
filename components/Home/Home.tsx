@@ -7,7 +7,7 @@ import { RecipeSkeleton } from '../RecipeSkeleton/RecipeSkeleton';
 import toast from 'react-hot-toast';
 import useSWR from "swr";
 import { useDebounce } from '../../hooks/useDebouce';
-import { getColorByDifficulty, justMe } from '../../utils';
+import { getColorByDifficulty, justMe } from '../../lib/utils';
 import { RecipeType } from '../../types/recipeTypes';
 import Recipe from '../Recipe/Recipe';
 import Chip from '../Chip/Chip';
@@ -23,6 +23,12 @@ type Props = {
 const ITEM_PER_LOAD = 6
 const ALL_ITEM_LIMIT = 40;
 
+const swrConfig = {
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+    dedupingInterval: 60000,
+}
+
 const Home = ({ initialRecipes }: Props) => {
 
     const [activeFilter, setActiveFilter] = useState<string>("All");
@@ -30,12 +36,6 @@ const Home = ({ initialRecipes }: Props) => {
     const debouncedSearch = useDebounce(searchPhrase);
     const [offset, setOffset] = useState<number>(0)
     const [limit, setLimit] = useState<number>(0)
-
-    const swrConfig = {
-        revalidateOnFocus: false,
-        revalidateOnReconnect: false,
-        dedupingInterval: 60000,
-    }
 
     const { data: allRecipes, isLoading: allRecipesLoading, error: allDataError } = useSWR(
         `/recipes/search?limit=${ALL_ITEM_LIMIT}&select=tags,name,image,difficulty,cuisine,cookTimeMinutes,image`,

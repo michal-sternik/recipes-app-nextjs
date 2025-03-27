@@ -1,5 +1,5 @@
 import { Just_Me_Again_Down_Here, Nunito } from "next/font/google";
-import { ColorsENUM } from "./types/recipeTypes";
+import { ColorsENUM } from "../types/recipeTypes";
 
 export const getColorByDifficulty = (difficulty: string): ColorsENUM => {
     switch (difficulty) {
